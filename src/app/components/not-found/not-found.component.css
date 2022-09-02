@@ -1,0 +1,24 @@
+.not-found-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 450px;
+  margin: auto;
+}
+
+.not-found-container h1{
+  font-size: 42px;
+  text-align: center;
+  margin-top: 28px;
+}
+
+
+.not-found-container img{
+  width: 300px;
+  height: auto;
+}
+
+.not-found-container a{
+  color: black;
+  text-align: center;
+}
