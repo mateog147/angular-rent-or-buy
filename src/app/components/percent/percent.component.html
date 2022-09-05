@@ -1,0 +1,41 @@
+<div class="container form-container">
+  <h1>Ley de porcentajes</h1>
+
+  <div class="input-container">
+    <label class="input-label" for="Input1">Precio de la casa:</label>
+    <input class="number-input" type="number" min="0" required #nameInput1="ngModel" required="true" [(ngModel)]="price"  (ngModelChange)="changePrice()"/>
+    <p class = "message-error" [class.active]="nameInput1.invalid">El campo es requerido</p>
+  </div>
+
+  <div class="input-container">
+    <label class="input-label" for="Input2">CDT/TES o equivalente:</label>
+    <input class="number-input" type="number" required #nameInput2="ngModel" required="true" [(ngModel)]="investmentFund"  (ngModelChange)="updateRent()"/>
+    <p class = "message-error" [class.active]="nameInput2.invalid">El campo es requerido</p>
+  </div>
+
+  <div class="input-container">
+    <label class="input-label" for="Input3">Valorización anual promedio:</label>
+    <input class="number-input" type="number" required #nameInput3="ngModel" required="true" [(ngModel)]="valuation" (ngModelChange)="updateRent()"/>
+    <p class = "message-error" [class.active]="nameInput3.invalid">El campo es requerido</p>
+  </div>
+
+  <div class="input-container">
+    <label class="input-label" for="Input4">Administración Mensual(si aplica):</label>
+    <input class="number-input" type="number" required #nameInput4="ngModel" required="true" [(ngModel)]="admon" (ngModelChange)="updateRent()"/>
+    <p class = "message-error" [class.active]="nameInput4.invalid">El campo es requerido</p>
+  </div>
+
+  <h4 *ngIf="validForm == false; else myBlock" >Valores de entrada invalidos</h4>
+  <ng-template #myBlock>
+    <h4>Arriendo equivalente: {{equivalentRent| currency}}</h4>
+  </ng-template>
+
+  <div class="img-container">
+  <img class="yoda-img" src="../../../assets/yodaEnd.png" alt="">
+  <div class="btn-container">
+    <button  routerLink="/select-you-must" class="main-btn red-btn">Regresar</button>
+    <a href="/dark-side">Pasarse al lado oscuro</a>
+  </div>
+</div>
+
+</div>
