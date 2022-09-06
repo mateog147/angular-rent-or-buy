@@ -8,9 +8,9 @@ import { Validators, FormBuilder} from '@angular/forms';
 })
 export class InvestmentEditorComponent implements OnInit {
 
-  profileForm = this.fb.group({
-    firstName: ['',Validators.required],
-    lastName: ['',Validators.required],
+  investmentForm = this.fb.group({
+    price: ['',Validators.required],
+    initialPayment: ['',Validators.required],
   });
   constructor(private fb: FormBuilder) { }
 
@@ -19,6 +19,6 @@ export class InvestmentEditorComponent implements OnInit {
 
   onSubmit() {
     // TODO: Use EventEmitter with form value
-    console.warn(this.profileForm.value);
+    console.warn(this.investmentForm.value);
   }
 }
