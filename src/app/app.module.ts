@@ -9,6 +9,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ChooseFormComponent } from './components/choose-form/choose-form.component';
 import { PercentComponent } from './components/percent/percent.component';
 import { InvesmentComponent } from './components/invesment/invesment.component';
+import { CurrencyPipe } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { InvestmentEditorComponent } from './components/investment-editor/investment-editor.component';
+
 
 @NgModule({
   declarations: [
@@ -17,14 +21,16 @@ import { InvesmentComponent } from './components/invesment/invesment.component';
     NotFoundComponent,
     ChooseFormComponent,
     PercentComponent,
-    InvesmentComponent
+    InvesmentComponent,
+    InvestmentEditorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

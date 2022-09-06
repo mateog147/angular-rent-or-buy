@@ -1,3 +1,4 @@
+import { CurrencyPipe } from '@angular/common';
 import { PredialService } from './../../services/predial.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,7 +15,11 @@ export class PercentComponent implements OnInit {
   valuation:number = 4;
   predial:number = 0;
   equivalentRent:any = 1;
-  constructor(private predialService:PredialService ) {  }
+
+  constructor(
+    private predialService:PredialService,
+    private currencyPipe:CurrencyPipe
+    ) {  }
 
   ngOnInit(): void {
     this.updatePredial();

@@ -3,7 +3,7 @@
 
   <div class="input-container">
     <label class="input-label" for="Input1">Precio de la casa:</label>
-    <input class="number-input" type="number" min="0" required #nameInput1="ngModel" required="true" [(ngModel)]="price"  (ngModelChange)="changePrice()"/>
+    <input  class="number-input" type="number"  min="0" required #nameInput1="ngModel" required="true" [(ngModel)]="price"   (ngModelChange)="changePrice()"/>
     <p class = "message-error" [class.active]="nameInput1.invalid">El campo es requerido</p>
   </div>
 
