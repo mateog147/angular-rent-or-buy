@@ -1,6 +1,7 @@
 import { CurrencyPipe } from '@angular/common';
 import { PredialService } from './../../services/predial.service';
 import { Component, OnInit } from '@angular/core';
+import swal from'sweetalert2';
 
 @Component({
   selector: 'app-percent',
@@ -22,9 +23,9 @@ export class PercentComponent implements OnInit {
     ) {  }
 
   ngOnInit(): void {
+    this.showInstructions();
     this.updatePredial();
     this.updateRent();
-
   }
 
   changePrice(){
@@ -44,6 +45,14 @@ export class PercentComponent implements OnInit {
 
   updatePredial() {
     this.predial = this.predialService.getPredialPercent(this.price);
+  }
+
+  showInstructions(){
+    swal.fire(
+      '',
+      'Analisis del gasto equivalente en arriendo a los gastos de comprar la casa, sin contar el costo de la cuota',
+      'success'
+    )
   }
 
 }
