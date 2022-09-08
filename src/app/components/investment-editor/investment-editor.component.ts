@@ -11,6 +11,10 @@ export class InvestmentEditorComponent implements OnInit {
   investmentForm = this.fb.group({
     price: ['',Validators.required],
     initialPayment: ['',Validators.required],
+    interestRate: ['',Validators.required],
+    years: ['',Validators.required],
+    cdt: ['',Validators.required],
+    valuation: ['',Validators.required],
   });
   constructor(private fb: FormBuilder) { }
 

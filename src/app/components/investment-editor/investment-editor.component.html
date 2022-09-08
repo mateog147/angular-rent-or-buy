@@ -7,5 +7,17 @@
   <label for="initial-payment">Porcentaje de Inicial: </label>
   <input id="initial-payment" type="number" formControlName="initialPayment">
 
+  <label for="interest-rate">Tasa de interes EA: </label>
+  <input id="interest-rate" type="number" formControlName="interestRate">
+
+  <label for="years">Plazo en años: </label>
+  <input id="years" type="number" formControlName="years">
+
+  <label for="cdt">tssa CDT/TES vigente: </label>
+  <input id="cdt" type="number" formControlName="cdt">
+
+  <label for="valuation">Tasa valorización promedio: </label>
+  <input id="valuation" type="number" formControlName="valuation">
+
   <button type="submit" [disabled]="!investmentForm.valid">Submit</button>
 </form>
