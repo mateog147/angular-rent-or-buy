@@ -1,4 +1,4 @@
-import { Ivestment } from "./Investment";
+import { Ivestment } from "./investment";
 
 export class HouseInvestment implements Ivestment{
   price: number;
@@ -8,20 +8,22 @@ export class HouseInvestment implements Ivestment{
   cdt: number;
   valuation: number;
 
-
-
-  constructor(price:number, initialPayment:number, interestRate:number, years:number, cdt:number, valuation:number){
-    this.price=price;
-    this.initialPayment=initialPayment;
-    this.interestRate=interestRate;
-    this.years=years;
-    this.cdt=cdt;
-    this.valuation=valuation;
+  constructor(investment:any){
+    this.price=investment.price;
+    this.initialPayment=investment.initialPayment;
+    this.interestRate=investment.interestRate;
+    this.years=investment.years;
+    this.cdt=investment.cdt;
+    this.valuation=investment.valuation;
   }
 
   installment() {
-    throw new Error("Method not implemented.");
+    let month = this.years * 12;
+    let rateMonth = this.calculateMonthlyRate();
+
   }
+
+
   getFuturePrice() {
     throw new Error("Method not implemented.");
   }
@@ -30,6 +32,13 @@ export class HouseInvestment implements Ivestment{
   }
   getEquivalentInvestMent() {
     throw new Error("Method not implemented.");
+  }
+
+  private calculateMonthlyRate() {
+    let rate:number = (this.interestRate + 1);
+    rate = rate **(1/12);
+    rate = rate -1;
+    return rate;
   }
 
 }

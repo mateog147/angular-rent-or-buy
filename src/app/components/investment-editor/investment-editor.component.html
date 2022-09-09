@@ -2,7 +2,7 @@
 <form [formGroup]="investmentForm" (ngSubmit)="onSubmit()">
 
   <label for="price">Precio casa: </label>
-  <input id="price" type="text" formControlName="price">
+  <input id="price" type="number" formControlName="price">
 
   <label for="initial-payment">Porcentaje de Inicial: </label>
   <input id="initial-payment" type="number" formControlName="initialPayment">

@@ -12,6 +12,7 @@ import { InvesmentComponent } from './components/invesment/invesment.component';
 import { CurrencyPipe } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InvestmentEditorComponent } from './components/investment-editor/investment-editor.component';
+import { ResultInvestmentComponent } from './components/result-investment/result-investment.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { InvestmentEditorComponent } from './components/investment-editor/invest
     ChooseFormComponent,
     PercentComponent,
     InvesmentComponent,
-    InvestmentEditorComponent
+    InvestmentEditorComponent,
+    ResultInvestmentComponent
   ],
   imports: [
     BrowserModule,

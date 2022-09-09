@@ -1,3 +1,4 @@
+import { HouseInvestment } from 'src/app/models/houseInverstment';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./invesment.component.css']
 })
 export class InvesmentComponent implements OnInit {
-price= 1
+  displayResult='none';
+  investment?:HouseInvestment;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  evaluateInvestment($event:any){
+    this.investment=$event;
+    this.displayResult='block'
   }
 
 }
