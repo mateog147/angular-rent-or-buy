@@ -50,7 +50,7 @@ export class PercentComponent implements OnInit {
   showInstructions(){
     swal.fire(
       '',
-      'Analisis del gasto equivalente en arriendo a los gastos de comprar la casa, sin contar el costo de la cuota',
+      'Análisis del gasto equivalente en arriendo a los gastos de comprar la casa, sin contar el costo de la cuota',
       'success'
     )
   }
