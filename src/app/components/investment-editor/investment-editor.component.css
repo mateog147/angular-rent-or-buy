@@ -1,11 +1,17 @@
 form {
   padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 label {
   display: block;
   margin: .5em 0;
   font-weight: bold;
+}
+
+button{
+margin-top: 8px;
 }
 
 .ng-valid[required], .ng-valid.required  {

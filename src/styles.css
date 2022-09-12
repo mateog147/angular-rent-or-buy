@@ -20,6 +20,7 @@
   cursor: pointer;
 }
 
+
 .red-btn{
   background-color: lightcoral;
 }
@@ -30,6 +31,18 @@
 
 .green-btn{
   background-color: lightgreen;
+}
+
+.main-btn:disabled{
+  background: #dddddd;
+  color: gray;
+  cursor: none;
+}
+
+.main-btn:disabled:hover{
+  background: #dddddd;
+  color: gray;
+  cursor: none;
 }
 
 .green-btn:hover{
