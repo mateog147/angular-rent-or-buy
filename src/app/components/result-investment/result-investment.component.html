@@ -1,0 +1,20 @@
+
+<h4>Condiciones generales:</h4>
+<p>Precio casa: {{price() | currency:'COP':'symbol-narrow':'1.0-0'}}</p>
+<p>Cuota inicial: {{initialPay() | currency:'COP':'symbol-narrow':'1.0-0'}}</p>
+<p>Periodo en años: {{getPeriod()}}</p>
+
+<hr />
+<h4>Inversión compra casa</h4>
+<p>Cuota mensual: {{installment() | currency:'COP':'symbol-narrow':'1.0-0'}}</p>
+<p>Proyección precio casa:</p>
+<p>{{futurePrice() | currency:'COP':'symbol-narrow':'1.0-0' }}</p>
+
+<hr />
+<h4>Inversión equivalente</h4>
+<p>Presupuesto Arriendo: {{installment() | currency:'COP':'symbol-narrow':'1.0-0'}}</p>
+<p>Proyección inversión cuota inicial: </p>
+<p>{{equivalentFuturePrice() | currency:'COP':'symbol-narrow':'1.0-0' }}</p>
+<p>Proyección ahorro(impuesto-mantenimiento):</p>
+<p>{{saving() | currency:'COP':'symbol-narrow':'1.0-0' }}</p>
+

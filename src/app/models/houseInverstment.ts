@@ -17,28 +17,50 @@ export class HouseInvestment implements Ivestment{
     this.valuation=investment.valuation;
   }
 
-  installment() {
-    let month = this.years * 12;
-    let rateMonth = this.calculateMonthlyRate();
-
+  public getInstallment(){
+    let month:number = this.years * 12;
+    let rateMonth:number = this.calculateMonthlyRate();
+    let response =this.calculateInstallmentFactor(month, rateMonth) * this.calculateFinancedAmount();
+    return Math.round(response);
   }
-
 
   getFuturePrice() {
-    throw new Error("Method not implemented.");
+    let futurePrice:number = this.price;
+    for (let index = 1; index < this.years; index++) {
+      futurePrice += (futurePrice * (this.valuation/100));
+    }
+    return futurePrice;
   }
   getCostOfEquity() {
-    throw new Error("Method not implemented.");
+    let percentAnualCost = 0.015;
+    let futurePrice:number = this.price * percentAnualCost;
+    futurePrice = futurePrice * this.years;
+    return futurePrice;
   }
   getEquivalentInvestMent() {
-    throw new Error("Method not implemented.");
+    let futurePrice:number = this.price * (this.initialPayment / 100);
+    for (let index = 1; index < this.years; index++) {
+      futurePrice += (futurePrice * (this.cdt/100));
+    }
+    return futurePrice;
+  }
+
+  private calculateFinancedAmount():number {
+    return this.price * (1 - (this.initialPayment /100));
   }
 
   private calculateMonthlyRate() {
-    let rate:number = (this.interestRate + 1);
-    rate = rate **(1/12);
+    let rate:number = ((this.interestRate/100) + 1);
+    rate = rate ** (1/12);
     rate = rate -1;
     return rate;
+  }
+
+  private calculateInstallmentFactor(month: number, rateMonth: number): number {
+    let numerator:number = ((1+rateMonth)**month)*rateMonth;
+    let denominator:number = ((1+rateMonth)**month)-1;
+    let installmentFactor = numerator / denominator;
+    return installmentFactor;
   }
 
 }

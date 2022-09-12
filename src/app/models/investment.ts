@@ -5,7 +5,7 @@ export interface Ivestment{
   years:number;
   cdt:number;
   valuation:number;
-  installment():any;
+  getInstallment():any;
   getFuturePrice():any;
   getCostOfEquity():any;
   getEquivalentInvestMent():any;
