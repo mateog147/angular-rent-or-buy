@@ -2,8 +2,8 @@
 <form [formGroup]="investmentForm" (ngSubmit)="onSubmit()">
 
   <label for="price">Precio casa: </label>
-  <input id="price" type="number" formControlName="price">
-
+  <input id="price" type="number" formControlName="price" >
+  <p >{{price | currency:'COP':'symbol-narrow':'1.0-0'}}</p>
   <label for="initial-payment">Porcentaje de Inicial: </label>
   <input id="initial-payment" type="number" formControlName="initialPayment">
 
@@ -13,11 +13,11 @@
   <label for="years">Plazo en años: </label>
   <input id="years" type="number" formControlName="years">
 
-  <label for="cdt">tssa CDT/TES vigente: </label>
+  <label for="cdt">Tasa CDT/TES vigente: </label>
   <input id="cdt" type="number" formControlName="cdt">
 
   <label for="valuation">Tasa valorización promedio: </label>
   <input id="valuation" type="number" formControlName="valuation">
 
-  <button class="main-btn green-btn" type="submit" [disabled]="!investmentForm.valid">Submit</button>
+  <button class="main-btn green-btn" type="submit" [disabled]="!investmentForm.valid">Evaluar</button>
 </form>

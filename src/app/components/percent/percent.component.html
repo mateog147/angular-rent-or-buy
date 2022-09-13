@@ -3,7 +3,10 @@
 
   <div class="input-container">
     <label class="input-label" for="Input1">Precio de la casa:</label>
-    <input  class="number-input" type="number"  min="0" required #nameInput1="ngModel" required="true" [(ngModel)]="price"   (ngModelChange)="changePrice()"/>
+    <div class="number-input-container">
+      <input  class="number-input" type="number"  min="0" required #nameInput1="ngModel" required="true" [(ngModel)]="price"   (ngModelChange)="changePrice()"/>
+      <p class="display-input-number">{{price | currency:'COP':'symbol-narrow':'1.0-0'}}</p>
+    </div>
     <p class = "message-error" [class.active]="nameInput1.invalid">El campo es requerido</p>
   </div>
 
@@ -21,13 +24,16 @@
 
   <div class="input-container">
     <label class="input-label" for="Input4">Administración Mensual(si aplica):</label>
-    <input class="number-input" type="number" required #nameInput4="ngModel" required="true" [(ngModel)]="admon" (ngModelChange)="updateRent()"/>
+    <div class="number-input-container">
+      <input class="number-input" type="number" required #nameInput4="ngModel" required="true" [(ngModel)]="admon" (ngModelChange)="updateRent()"/>
+      <p class="display-input-number">{{admon | currency:'COP':'symbol-narrow':'1.0-0'}}</p>
+    </div>
     <p class = "message-error" [class.active]="nameInput4.invalid">El campo es requerido</p>
   </div>
 
   <h4 *ngIf="validForm == false; else myBlock" >Valores de entrada invalidos</h4>
   <ng-template #myBlock>
-    <h4>Arriendo equivalente: {{equivalentRent| currency}}</h4>
+    <h4>Arriendo equivalente: {{equivalentRent| currency:'COP':'symbol-narrow':'1.0-0'}}</h4>
   </ng-template>
 
   <div class="img-container">

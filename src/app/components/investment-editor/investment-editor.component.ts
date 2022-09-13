@@ -11,6 +11,7 @@ import { HouseInvestment } from 'src/app/models/houseInverstment';
 export class InvestmentEditorComponent implements OnInit {
 
   @Output() newItemEvent = new EventEmitter< HouseInvestment>();
+  price?:number;
   investmentForm = this.fb.group({
     price: ['',Validators.required],
     initialPayment: ['',Validators.required],
@@ -23,7 +24,9 @@ export class InvestmentEditorComponent implements OnInit {
   constructor(private fb: FormBuilder, private router:Router) { }
 
   ngOnInit(): void {
-  }
+    this.investmentForm.valueChanges.subscribe((value)=>{
+      this.updateData(value)
+    })}
 
   onSubmit() {
     let investment:HouseInvestment;
@@ -34,5 +37,9 @@ export class InvestmentEditorComponent implements OnInit {
     console.log(investment);
     this.router.navigate(['investment/result'],{ relativeTo: this.route })
     //this.newItemEvent.emit(investment);
+  }
+
+  updateData(value:any){
+    this.price = value.price;
   }
 }
