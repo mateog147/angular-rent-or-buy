@@ -13,7 +13,7 @@ import { CurrencyPipe } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { InvestmentEditorComponent } from './components/investment-editor/investment-editor.component';
 import { ResultInvestmentComponent } from './components/result-investment/result-investment.component';
-
+import { SixPercentComponent } from './components/six-percent/percent.component';
 
 @NgModule({
   declarations: [
@@ -24,15 +24,11 @@ import { ResultInvestmentComponent } from './components/result-investment/result
     PercentComponent,
     InvesmentComponent,
     InvestmentEditorComponent,
-    ResultInvestmentComponent
+    ResultInvestmentComponent,
+    SixPercentComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [CurrencyPipe],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
